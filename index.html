@@ -26,6 +26,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="https://code.highcharts.com/highcharts.js"></script>
   </head>
   <body>
 
@@ -112,9 +113,107 @@
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+          <div class="mx-auto text-center section-heading">
             <h2 class="mb-5">Results</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestiae repudiandae voluptatum dicta neque.</p>
+            <p style='text-align: justify'>We used our model that predict the outcome of a game to simulate the whole World Cup competition. A simulation starts with the initial groups defined by the FIFA draw and simulates each game of the group phase in order to determine which teams will access the knockout phase. Then, we follow the rules of the FIFA World Cup to determine which team plays against which team in the knockout phase, and we simulate the games until the final. We ran 10000 simulations of world cup and here are the results. The chart below shows the number of time each teams won a simulation:</p>
+            <h3>Percentage of Simulated World Cup Won by Each Team</h3>
+            <div id="container" style="width: 100%; height: 100%; margin: 0px auto; overflow: hidden;" data-highcharts-chart="0">
+            <script type="text/javascript">
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'bar',
+                    height: '1000',
+                    width: '1000',
+                    backgroundColor: '#f8f9fa'
+                },
+                title: {
+                    text: ''
+                },
+                yAxis:{
+                  visible: false
+                },
+                xAxis: {
+                    type: 'category',
+                    tickLength: 0,
+                    startOnTick: true,
+                    labels: {
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: 'Chance of winning: <b>{point.y:.1f}%</b>'
+                },
+                series: [{
+                    name: 'Population',
+                    color: '#eec60a',
+                    data: [['Portugal 🇵🇹', 30.14],
+             ['Spain 🇪🇸', 24.54],
+             ['Belgium 🇧🇪', 20.89],
+             ['England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+              16.36],
+             ['France 🇫🇷', 4.36],
+             ['Brazil 🇧🇷', 2.13],
+             ['Germany 🇩🇪', 0.7000000000000001],
+             ['Argentina 🇦🇷', 0.41000000000000003],
+             ['Croatia 🇭🇷', 0.15],
+             ['Uruguay 🇺🇾', 0.13],
+             ['Denmark 🇩🇰', 0.1],
+             ['Colombia 🇨🇴', 0.06999999999999999],
+             ['Serbia 🇷🇸', 0.01],
+             ['Switzerland 🇨🇭', 0.01],
+             ['Poland 🇵🇱', 0.0],
+             ['Senegal 🇸🇳', 0.0],
+             ['Japan 🇯🇵', 0.0],
+             ['Panama 🇵🇦', 0.0],
+             ['Tunisia 🇹🇳', 0.0],
+             ['Korea Republic 🇰🇷', 0.0],
+             ['Mexico 🇲🇽', 0.0],
+             ['Sweden 🇸🇪', 0.0],
+             ['Costa Rica 🇨🇷', 0.0],
+             ['Iceland 🇮🇸', 0.0],
+             ['Nigeria 🇳🇬', 0.0],
+             ['Australia 🇦🇺', 0.0],
+             ['Peru 🇵🇪', 0.0],
+             ['Morocco 🇲🇦', 0.0],
+             ['Iran 🇮🇷', 0.0],
+             ['Egypt 🇪🇬', 0.0],
+             ['Saudi Arabia 🇸🇦', 0.0],
+             ['Russia 🇷🇺', 0.0]],
+                    dataLabels: {
+                        enabled: true,
+                        color: '#FFFFFF',
+                        align: 'right',
+                        format: '{point.y:.1f}%', // one decimal
+                        y: 0, // 10 pixels down from the top
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }],
+                credits: {
+                	enabled: false
+                }
+            });
+
+
+            </script>
+            <script>
+              // tell the embed parent frame the height of the content
+              if (window.parent && window.parent.parent){
+                window.parent.parent.postMessage(["resultsFrame", {
+                  height: document.body.getBoundingClientRect().height,
+                  slug: ""
+                }], "*")
+              }
+            </script>
+
           </div>
         </div>
       </div>
