@@ -60,10 +60,11 @@
                       <li class="active">
                         <a href="index.html">Home</a>
                       </li>
-                      <li><a href="#project">The Project</a></li>
-                      <li><a href="#results">Results</a></li>
-                      <li><a href="#eda">EDA</a></li>
+                      <li><a href="#project">Project</a></li>
                       <li><a href="#data">Data</a></li>
+                      <li><a href="#eda">EDA</a></li>
+                      <li><a href="#model">Model</a></li>
+                      <li><a href="#results">Results</a></li>
                       <li><a href="#conclusion">Conclusion</a></li>
                     </ul>
                   </div>
@@ -96,13 +97,50 @@
       </div>
     </div>
 
-    <div class="site-section" id="project">
+    <div class="site-section bg-light" id="project">
       <div class="container">
         <div class="row">
           <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">The Project</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestiae repudiandae voluptatum dicta neque.</p>
+            <h2 class="mb-5">Project</h2>
+            <p>We set out to predict world cup matches using data available on-line and various modeling techniques.  We also devised a World Cup simulator that ran through one thousand iterations of the tournament, to see how our model compared with the actual results.<br/>
+            Follow the link below to lean more about our motivations, our approach, some of the challenges of undertaking such a project, and review some of the litterature on the topic.</p>
             <a href='notebooks/project_statement.html' target='_blank'><img src='images/lmai.png'/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="data">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+            <h2 class="mb-5">Data</h2>
+            <p>We collected data from various online-sources and engineered variables based on historical results.  Click below to see the techniques we employed to scrape data from the web, and the processes we devised to generate inputs for our mdel.</p>
+            <a href='notebooks/feature_engineering.html' target='_blank'><img src='images/lmai.png'/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-light" id="eda">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center section-heading">
+            <h2 class="mb-5">EDA</h2>
+            <p>Click here for a closer look at the story told by the data. See how the features we explored relate to match outcomes, and get early insights on potential challenges revealed by the data.</p>
+            <a href='notebooks/exploratory_data_analysis.html' target='_blank'><img src='images/lmai.png'/></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section" id="model">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center section-heading">
+            <h2 class="mb-5">Model</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestiae repudiandae voluptatum dicta neque.</p>
+            <a href='notebooks/exploratory_data_analysis.html' target='_blank'><img src='images/lmai.png'/></a>
           </div>
         </div>
       </div>
@@ -111,22 +149,23 @@
     <div class="site-section bg-light" id="results">
       <div class="container">
         <div class="row">
-          <div class="mx-auto text-center section-heading">
+          <div class="text-center section-heading">
             <h2 class="mb-5">Results</h2>
+            <p class="col-md-6 mx-auto text-center">Find out how our model performed! Did we surpass the basic model based on FIFA rankings? Did our World Cup simulator generate reasonable results?</p>
             <h3>Accuracy</h3>
-            <p style='text-align: justify'>After we selected our model, we ran it against the actual FIFA World Cup 2018 games to compute the accuracy our model would have had on predicting games of the competitions. We've reached the following accuracy:</p>
-            <p style='text-color: #111; font-size: 100px'>61.9%</p>
-            <p style='text-align: justify'>Our model is pretty weak at predicting draws, and this past World Cup had a lot of them. Also, soccer is not an easy sport to predict which makes it a beautiful sport. We were not able to come up with great feature to segregate wins from loss or draw.</p>
+            <p class="col-md-6 mx-auto text-center" style='text-align: justify'>After we selected our model, we ran it against the actual FIFA World Cup 2018 games to compute the accuracy our model would have had on predicting games of the competitions. We've reached the following accuracy:</p>
+            <p class="col-md-6 mx-auto text-center" style='text-color: #111; font-size: 100px'>60.93%</p>
+            <p class="col-md-6 mx-auto text-center" style='text-align: justify'>Our model is pretty weak at predicting draws, and this past World Cup had a lot of them. Also, soccer is not an easy sport to predict which makes it a beautiful sport. We were not able to come up with great feature to segregate wins from loss or draw.</p>
             <hr/>
             <h3>Simulation</h3>
-            <p style='text-align: justify'>We used our model that predict the outcome of a game to simulate the whole World Cup competition. A simulation starts with the initial groups defined by the FIFA draw and simulates each game of the group phase in order to determine which teams will access the knockout phase. Then, we follow the rules of the FIFA World Cup to determine which team plays against which team in the knockout phase, and we simulate the games until the final. We ran 10000 simulations of world cup and here are the results. The chart below shows the number of time each teams won a simulation:</p>
+            <p class="col-md-6 mx-auto text-center" style='text-align: justify'>We used our model that predict the outcome of a game to simulate the whole World Cup competition. A simulation starts with the initial groups defined by the FIFA draw and simulates each game of the group phase in order to determine which teams will access the knockout phase. Then, we follow the rules of the FIFA World Cup to determine which team plays against which team in the knockout phase, and we simulate the games until the final. We ran 10000 simulations of world cup and here are the results. The chart below shows the number of time each teams won a simulation:</p>
             <h3>Percentage of Simulated World Cup Won by Each Team</h3>
             <div id="container" style="width: 100%; height: 100%; margin: 0px auto; overflow: hidden;" data-highcharts-chart="0">
             <script type="text/javascript">
             Highcharts.chart('container', {
                 chart: {
                     type: 'bar',
-                    height: '1000',
+                    height: '500',
                     width: '1000',
                     backgroundColor: '#f8f9fa'
                 },
@@ -168,27 +207,7 @@
  ['Denmark 🇩🇰', 0.03],
  ['Germany 🇩🇪', 0.01],
  ['Croatia 🇭🇷', 0.01],
- ['Poland 🇵🇱', 0.0],
- ['Senegal 🇸🇳', 0.0],
- ['Japan 🇯🇵', 0.0],
- ['Colombia 🇨🇴', 0.0],
- ['Panama 🇵🇦', 0.0],
- ['Tunisia 🇹🇳', 0.0],
- ['Korea Republic 🇰🇷', 0.0],
- ['Mexico 🇲🇽', 0.0],
- ['Sweden 🇸🇪', 0.0],
- ['Costa Rica 🇨🇷', 0.0],
- ['Serbia 🇷🇸', 0.0],
- ['Switzerland 🇨🇭', 0.0],
- ['Iceland 🇮🇸', 0.0],
- ['Nigeria 🇳🇬', 0.0],
- ['Australia 🇦🇺', 0.0],
- ['Peru 🇵🇪', 0.0],
- ['Morocco 🇲🇦', 0.0],
- ['Iran 🇮🇷', 0.0],
- ['Egypt 🇪🇬', 0.0],
- ['Saudi Arabia 🇸🇦', 0.0],
- ['Russia 🇷🇺', 0.0]],
+ ['Others', 0.0]],
                     dataLabels: {
                         enabled: true,
                         color: '#FFFFFF',
@@ -224,40 +243,12 @@
     </div>
   </div>
 
-  <div class="site-section" id="eda">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 mx-auto text-center section-heading">
-          <h2 class="mb-5">EDA</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestiae repudiandae voluptatum dicta neque.</p>
-          <a href='notebooks/exploratory_data_analysis.html' target='_blank'><img src='images/lmai.png'/></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="site-section bg-light" id="data">
-    <div class="container">
-      <div class="row">
-        <div class="mx-auto text-center section-heading">
-          <h2 class="mb-5">Data</h2>
-          <h3 class="mb-5">Scrapping</h3>
-          <p style='text-align: justify'>Once we decided what question we wanted to answer (e.g. what is the probability for the home team to beat the away team), we needed data. We were provided with a database of a lot of international games. We decided to augment this dataset with data about the home and away teams at this point. The video games FIFA has been around for quite some times and they've been rating players and teams for quite some times. We decided it would be smart to grab information about the teams at the time of the games based on how the video game FIFA grade them. We wrote a scrapper for SoFifa (<a href='http://sofifa.com' target='_blank'>http://sofifa.com</a>). It would grab all the stats for each national team available on each version of FIFA (e.g FIFA06, FIFA10, ...) as well as the stats of each of the player composing the team. The code of the scrapper is available <a href='' target='_blank'>here</a>.</p>
-          <hr/>
-          <h3 class="mb-5">Feature Engineering</h3>
-          <p style='text-align: justify'>We used all this scrapped data to create feature such as the difference of average age for the attackers between the home and away team, or the difference of average speed between the home attack and the away defense. This was done by aggregating the stats about the player of each team for each game of the initial dataset and when it happened.</p>
-          <a href='notebooks/feature_engineering.html' target='_blank'><img src='images/lmai.png'/></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <div class="site-section" id="conclusion">
     <div class="container">
       <div class="row">
         <div class="col-md-6 mx-auto text-center mb-5 section-heading">
           <h2 class="mb-5">Conclusion</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestiae repudiandae voluptatum dicta neque.</p>
+          <p>Predicting soccer matches outcomes is a complex task, and like many data-science endeavors, a never-ending quest for better predictions.  Click on the link below to view conclusions, reflections and future avenues for exploration.</p>
         </div>
       </div>
     </div>
@@ -265,9 +256,14 @@
 
     <footer class="site-footer">
       <div class="container">
-        <div class="row pt-5 mt-5 text-center">
+        <div class="row text-center">
           <div class="col-md-12">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p style='font-size:15px; line-height: 1px;'>Nikhil Inamdar</p>
+            <p style='font-size:15px; line-height: 1px;'>Paul Jureidini</p>
+            <p style='font-size:15px; line-height: 1px;'>Peeti Sriwongsanguan</p>
+            <p style='font-size:15px; line-height: 1px;'>Florent Thomas-Morel</p>
+            <br/>
+            <p style='color: #fff; font-size:15px; line-height: 1px;'>CSI109A</p>
             Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with <i class="icon-heart text-warning" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
