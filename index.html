@@ -139,8 +139,8 @@
         <div class="row">
           <div class="col-md-6 mx-auto text-center section-heading">
             <h2 class="mb-5">Model</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus molestiae repudiandae voluptatum dicta neque.</p>
-            <a href='notebooks/exploratory_data_analysis.html' target='_blank'><img src='images/lmai.png'/></a>
+            <p>Find out what all classifiers we used to build our baseline and advanced models. See how these two models compare and how the best model fared on World Cup data.</p>
+            <a href='notebooks/model.html' target='_blank'><img src='images/lmai.png'/></a>
           </div>
         </div>
       </div>
@@ -153,19 +153,18 @@
             <h2 class="mb-5">Results</h2>
             <p class="col-md-6 mx-auto text-center">Find out how our model performed! Did we surpass the basic model based on FIFA rankings? Did our World Cup simulator generate reasonable results?</p>
             <h3>Accuracy</h3>
-            <p class="col-md-6 mx-auto text-center" style='text-align: justify'>After we selected our model, we ran it against the actual FIFA World Cup 2018 games to compute the accuracy our model would have had on predicting games of the competitions. We've reached the following accuracy:</p>
             <p class="col-md-6 mx-auto text-center" style='text-color: #111; font-size: 100px'>60.93%</p>
-            <p class="col-md-6 mx-auto text-center" style='text-align: justify'>Our model is pretty weak at predicting draws, and this past World Cup had a lot of them. Also, soccer is not an easy sport to predict which makes it a beautiful sport. We were not able to come up with great feature to segregate wins from loss or draw.</p>
             <hr/>
             <h3>Simulation</h3>
-            <p class="col-md-6 mx-auto text-center" style='text-align: justify'>We used our model that predict the outcome of a game to simulate the whole World Cup competition. A simulation starts with the initial groups defined by the FIFA draw and simulates each game of the group phase in order to determine which teams will access the knockout phase. Then, we follow the rules of the FIFA World Cup to determine which team plays against which team in the knockout phase, and we simulate the games until the final. We ran 10000 simulations of world cup and here are the results. The chart below shows the number of time each teams won a simulation:</p>
+            <p class="col-md-6 mx-auto text-center" style='text-align: justify'>We used our model that predict the outcome of a game to simulate the whole World Cup competition.</p>
+            <!-- A simulation starts with the initial groups defined by the FIFA draw and simulates each game of the group phase in order to determine which teams will access the knockout phase. Then, we follow the rules of the FIFA World Cup to determine which team plays against which team in the knockout phase, and we simulate the games until the final. We ran 10000 simulations of world cup and here are the results. The chart below shows the number of time each teams won a simulation: -->
             <h3>Percentage of Simulated World Cup Won by Each Team</h3>
             <div id="container" style="width: 100%; height: 100%; margin: 0px auto; overflow: hidden;" data-highcharts-chart="0">
             <script type="text/javascript">
             Highcharts.chart('container', {
                 chart: {
                     type: 'bar',
-                    height: '500',
+                    height: '600',
                     width: '1000',
                     backgroundColor: '#f8f9fa'
                 },
@@ -195,18 +194,25 @@
                 series: [{
                     name: 'Population',
                     color: '#eec60a',
-                    data: [['Spain 🇪🇸', 40.31],
- ['Portugal 🇵🇹', 27.339999999999996],
- ['Belgium 🇧🇪', 18.2],
+                    data: [['Spain 🇪🇸', 27.24],
+ ['Portugal 🇵🇹', 24.87],
+ ['Belgium 🇧🇪', 20.580000000000002],
  ['England 🏴󠁧󠁢󠁥󠁮󠁧󠁿',
-  10.91],
- ['France 🇫🇷', 2.8899999999999997],
- ['Argentina 🇦🇷', 0.16],
- ['Uruguay 🇺🇾', 0.09],
- ['Brazil 🇧🇷', 0.05],
- ['Denmark 🇩🇰', 0.03],
- ['Germany 🇩🇪', 0.01],
- ['Croatia 🇭🇷', 0.01],
+  16.009999999999998],
+ ['France 🇫🇷', 3.85],
+ ['Argentina 🇦🇷', 2.33],
+ ['Croatia 🇭🇷', 1.7000000000000002],
+ ['Brazil 🇧🇷', 1.04],
+ ['Uruguay 🇺🇾', 0.97],
+ ['Germany 🇩🇪', 0.65],
+ ['Denmark 🇩🇰', 0.33],
+ ['Colombia 🇨🇴', 0.15],
+ ['Serbia 🇷🇸', 0.08],
+ ['Russia 🇷🇺', 0.08],
+ ['Poland 🇵🇱', 0.05],
+ ['Mexico 🇲🇽', 0.03],
+ ['Senegal 🇸🇳', 0.02],
+ ['Japan 🇯🇵', 0.02],
  ['Others', 0.0]],
                     dataLabels: {
                         enabled: true,
@@ -249,6 +255,7 @@
         <div class="col-md-6 mx-auto text-center mb-5 section-heading">
           <h2 class="mb-5">Conclusion</h2>
           <p>Predicting soccer matches outcomes is a complex task, and like many data-science endeavors, a never-ending quest for better predictions.  Click on the link below to view conclusions, reflections and future avenues for exploration.</p>
+          <a href='notebooks/exploratory_data_analysis.html' target='_blank'><img src='images/lmai.png'/></a>
         </div>
       </div>
     </div>
